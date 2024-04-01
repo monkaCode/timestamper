@@ -3,6 +3,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 from datetime import datetime as dt
+from dateutil import tz
 
 class timestamp(commands.Cog):
     def __init__(cmd, bot: commands.Bot) -> None:
@@ -22,7 +23,7 @@ class timestamp(commands.Cog):
         year: int = dt.now().year,
         type: Literal["t", "T", "d", "D", "f", "F", "R"] = "R"):
 
-        timestamp = dt(year, month, day, hr, min, sec)
+        timestamp = dt(year, month, day, hr, min, sec, tzinfo=tz.gettz('Europe / Berlin'))
         
         await interaction.response.send_message(f"```<t:{round(timestamp.timestamp())}:{type}>```", ephemeral=True)
         
