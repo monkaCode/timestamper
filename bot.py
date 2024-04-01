@@ -22,7 +22,7 @@ class Timestamper(commands.Bot):
             await self.load_extension(ext)
         
     async def on_ready(self):
-        print(f"{self.user} has connected to discord")
+        print(f"{self.user} has connected to discord", flush=True)
 
     async def on_message(self, message: discord.Message) -> None:
         if(message.content == f"{Config.PREFIX}sync" and message.author.id == Config.OWNER):

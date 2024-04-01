@@ -3,3 +3,5 @@ services:
   app:
     container_name: timestamper
     build: .
+    volumes:
+      - ./config.json:/app/config.json
