@@ -11,7 +11,7 @@ class timestamp(commands.Cog):
 
     @app_commands.command(name="timestamp", description="Create a timestamp")
     @app_commands.allowed_installs(guilds=False, users=True)
-    @app_commands.allowed_contexts(guilds=False, dms=True, private_channels=True)
+    @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def about(
         cmd,
         interaction: discord.Interaction,
