@@ -3,5 +3,8 @@ services:
   app:
     container_name: timestamper
     build: .
+    # image: ghcr.io/monkacode/timestamper:latest
     volumes:
       - ./config.json:/app/config.json
+    environment:
+      - TZ=Europe/Berlin
