@@ -18,10 +18,14 @@ class timestamp(commands.Cog):
         hr: int,
         min: int,
         sec: int,
-        day: int = dt.now().day,
-        month: int = dt.now().month,
-        year: int = dt.now().year,
+        day: int = 0,
+        month: int = 0,
+        year: int = 0,
         type: Literal["t", "T", "d", "D", "f", "F", "R"] = "R"):
+
+        day = day if day != 0 else dt.now().day
+        month = month if month != 0 else dt.now().month
+        year = year if year != 0 else dt.now().year
 
         timestamp = dt(year, month, day, hr, min, sec, tzinfo=tz.gettz('Europe / Berlin'))
         
