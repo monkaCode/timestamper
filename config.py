@@ -8,5 +8,3 @@ class Config:
     BOT_TOKEN:str = config["bot_token"]
     PREFIX:str = config["prefix"]
     OWNER:int = config["owner"]
-    RIOT_API_KEY:str = config["riot_api_key"]
-    VALOLYTICS_API_KEY:str = config["valolytics_api_key"]

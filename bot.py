@@ -4,7 +4,7 @@ import discord
 from discord.ext import commands
 from config import Config
 
-class ValolyticsVCT(commands.Bot):
+class Timestamper(commands.Bot):
 
     def __init__(self):
         super().__init__(
@@ -14,7 +14,7 @@ class ValolyticsVCT(commands.Bot):
         )
 
         self.initial_extensions = [
-            "stats"
+            "timestamp"
         ]
 
     async def setup_hook(self) -> None:
@@ -30,5 +30,5 @@ class ValolyticsVCT(commands.Bot):
             await message.channel.send(f"Synced {len(synced)} commands globally")
 
 if __name__ == "__main__":
-    bot = ValolyticsVCT()
+    bot = Timestamper()
     bot.run(Config.BOT_TOKEN)
