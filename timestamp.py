@@ -23,11 +23,11 @@ class timestamp(commands.Cog):
         year: int = 0,
         type: Literal["t", "T", "d", "D", "f", "F", "R"] = "R"):
 
-        day = day if day != 0 else dt.now(tz=tz.gettz('Europe / Berlin')).day
-        month = month if month != 0 else dt.now(tz=tz.gettz('Europe / Berlin')).month
-        year = year if year != 0 else dt.now(tz=tz.gettz('Europe / Berlin')).year
+        day = day if day != 0 else dt.now(tz=tz.gettz('Europe/Berlin')).day
+        month = month if month != 0 else dt.now(tz=tz.gettz('Europe/Berlin')).month
+        year = year if year != 0 else dt.now(tz=tz.gettz('Europe/Berlin')).year
 
-        timestamp = dt(year, month, day, hr, min, sec, tzinfo=tz.gettz('Europe / Berlin'))
+        timestamp = dt(year, month, day, hr, min, sec, tzinfo=tz.gettz('Europe/Berlin'))
         
         await interaction.response.send_message(f"```<t:{round(timestamp.timestamp())}:{type}>```", ephemeral=True)
         
