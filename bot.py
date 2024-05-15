@@ -13,9 +13,7 @@ class Timestamper(commands.Bot):
             application_id=Config.APPLICATION_ID
         )
 
-        self.initial_extensions = [
-            "timestamp"
-        ]
+        self.initial_extensions = ["timestamp"]
 
     async def setup_hook(self) -> None:
         for ext in self.initial_extensions:
